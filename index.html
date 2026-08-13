@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auralis Academia de Música</title>
+    <meta
+      name="description"
+      content="Auralis Academia de Música ofrece clases personalizadas de guitarra, violín, oboe, piano, audioperceptiva y armonía para todas las edades y niveles."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: '#111827',
+              panel: '#18181b',
+              parchment: '#f5efe6',
+              gold: '#d4a64d',
+              ember: '#c56d3d',
+              moss: '#6b7d5b',
+              mist: '#dfe7e1',
+              plum: '#2d1f2f'
+            },
+            boxShadow: {
+              soft: '0 18px 45px rgba(0,0,0,0.12)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+              display: ['"Cormorant Garamond"', 'serif'],
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap');
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: #0f172a;
+      }
+
+      .hero-bg {
+        background:
+          radial-gradient(circle at top left, rgba(212, 166, 77, 0.22), transparent 30%),
+          radial-gradient(circle at bottom right, rgba(197, 109, 61, 0.18), transparent 35%),
+          #111827;
+      }
+
+      .glass {
+        background: rgba(15, 23, 42, 0.72);
+        backdrop-filter: blur(10px);
+      }
+    </style>
+  </head>
+
+  <body class="text-slate-100 antialiased">
+    <header class="hero-bg">
+      <nav class="mx-auto max-w-7xl px-6 py-5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="flex h-11 w-11 items-center justify-center rounded-full border border-amber-400/60 bg-amber-400/10 text-lg font-bold text-amber-300">
+              A
+            </div>
+            <div>
+              <p class="text-xl font-semibold tracking-wide text-white">Auralis</p>
+              <p class="text-[10px] uppercase tracking-[0.28em] text-slate-400">Academia de Música</p>
+            </div>
+          </div>
+
+          <div class="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+            <a href="#nosotros" class="transition hover:text-white">Quiénes Somos</a>
+            <a href="#clases" class="transition hover:text-white">Clases</a>
+            <a href="#metodologia" class="transition hover:text-white">Metodología</a>
+            <a href="#contacto" class="transition hover:text-white">Contacto</a>
+          </div>
+
+          <a
+            href="#contacto"
+            class="rounded-full border border-amber-400/60 bg-amber-400 px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-amber-300"
+          >
+            Inscribirme
+          </a>
+        </div>
+      </nav>
+
+      <section class="mx-auto grid max-w-7xl items-center gap-12 px-6 pb-20 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:pb-28 lg:pt-16">
+        <div>
+          <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-white/5 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.24em] text-amber-200">
+            Música con alma y técnica
+          </div>
+
+          <h1 class="max-w-xl font-display text-5xl leading-none text-white md:text-6xl lg:text-7xl">
+            Tu música empieza aquí.
+          </h1>
+
+          <p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+            En Auralis Academy enseñamos con pasión, precisión y acompañamiento real. Clases
+            personalizadas de guitarra, violín, oboe, piano, audioperceptiva y armonía para
+            todas las edades y niveles.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#contacto"
+              class="rounded-full bg-amber-400 px-7 py-3.5 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-amber-300"
+            >
+              Inscribirme
+            </a>
+            <a
+              href="#clases"
+              class="rounded-full border border-slate-600 bg-slate-900/50 px-7 py-3.5 text-sm font-semibold text-white transition hover:border-slate-500 hover:bg-slate-800"
+            >
+              Consultar vacantes
+            </a>
+          </div>
+
+          <div class="mt-10 flex flex-wrap gap-8 text-sm text-slate-300">
+            <div>
+              <p class="text-2xl font-bold text-white">6</p>
+              <span>disciplinas</span>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white">Todos</p>
+              <span>los niveles</span>
+            </div>
+            <div>
+              <p class="text-2xl font-bold text-white">Clases</p>
+              <span>personalizadas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-soft backdrop-blur-sm">
+            <div class="overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
+              <img
+                src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80"
+                alt="Estudio de música"
+                class="h-[560px] w-full object-cover opacity-90"
+              />
+            </div>
+          </div>
+
+          <div class="absolute -left-6 top-10 rounded-2xl border border-amber-300/40 bg-slate-900/80 p-4 shadow-soft backdrop-blur">
+            <p class="text-xs uppercase tracking-[0.2em] text-amber-200">Modalidad</p>
+            <p class="mt-2 text-lg font-semibold text-white">Presencial y online</p>
+          </div>
+
+          <div class="absolute -bottom-5 right-6 rounded-2xl border border-amber-300/40 bg-amber-400/90 p-4 text-slate-900 shadow-soft">
+            <p class="text-xs uppercase tracking-[0.2em] text-slate-800">Especialidad</p>
+            <p class="mt-2 text-lg font-bold">Música y técnica</p>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="nosotros" class="mx-auto max-w-7xl px-6 py-20">
+        <div class="mx-auto mb-12 max-w-2xl text-center">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+            Quiénes somos
+          </p>
+          <h2 class="font-display text-4xl text-white md:text-5xl">
+            Profesores que enseñan con criterio, sensibilidad y pasión.
+          </h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-3">
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/60 p-7">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-amber-400/15 text-xl font-bold text-amber-300">
+              01
+            </div>
+            <h3 class="mb-3 text-2xl font-semibold text-white">Música de alto nivel</h3>
+            <p class="text-slate-300 leading-7">
+              Nuestro equipo está formado por músicos profesionales con experiencia en desempeño,
+              docencia y formación artística. Acompañamos a cada alumno con rigor y empatía.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/60 p-7">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-amber-400/15 text-xl font-bold text-amber-300">
+              02
+            </div>
+            <h3 class="mb-3 text-2xl font-semibold text-white">Enfoque humano</h3>
+            <p class="text-slate-300 leading-7">
+              Entendemos que cada estudiante aprende distinto. Por eso diseñamos clases para
+              acompañar su ritmo, sus objetivos y su relación personal con la música.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/60 p-7">
+            <div class="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-amber-400/15 text-xl font-bold text-amber-300">
+              03
+            </div>
+            <h3 class="mb-3 text-2xl font-semibold text-white">La música como lenguaje</h3>
+            <p class="text-slate-300 leading-7">
+              Queremos que cada alumno no solo “toque”, sino que escuche, entienda, cree y se
+              conecte con su expresión artística de forma profunda y auténtica.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="clases" class="bg-slate-950/80 py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mb-12 max-w-2xl">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+              Nuestra oferta académica
+            </p>
+            <h2 class="font-display text-4xl text-white md:text-5xl">
+              Descubre cada camino musical
+            </h2>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                🎸
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Guitarra</h3>
+              <p class="text-slate-300 leading-7">
+                Trabajamos postura, digitación, ritmos, armonía y repertorio para que puedas tocar
+                con soltura y expresividad.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                🎻
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Violín</h3>
+              <p class="text-slate-300 leading-7">
+                Fortalecemos afinación, arco, técnica corporal y musicalidad con una progresión clara
+                y acompañamiento constante.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                🎼
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Oboe</h3>
+              <p class="text-slate-300 leading-7">
+                Aprendé respiración, articulación, embocadura y fraseo con un enfoque técnico y
+                expresivo pensado para tu desarrollo.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                🎹
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Piano</h3>
+              <p class="text-slate-300 leading-7">
+                Combina lectura, coordinación, digitación y expresión musical para aprender a
+                interpretar con libertad y seguridad.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                👂
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Audioperceptiva</h3>
+              <p class="text-slate-300 leading-7">
+                Entrená tu oído para reconocer intervalos, ritmo, altura y estructura musical,
+                fortaleciendo tu lectura y comprensión del repertorio.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                📝
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Armonía</h3>
+              <p class="text-slate-300 leading-7">
+                Comprendé la lógica detrás de la música: acordes, funciones, relación tonal y análisis
+                musical aplicado a la práctica.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="metodologia" class="mx-auto max-w-7xl px-6 py-20">
+        <div class="mb-12 max-w-2xl">
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+            Metodología
+          </p>
+          <h2 class="font-display text-4xl text-white md:text-5xl">
+            Aprender música con una mirada integral
+          </h2>
+        </div>
+
+        <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-xl text-amber-300">
+              1
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-white">Clases a medida</h3>
+            <p class="text-slate-300 leading-7">
+              Diseñamos cada plan según el nivel, los objetivos y las necesidades de cada
+              estudiante para que el progreso sea real y sostenido.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-xl text-amber-300">
+              2
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-white">Técnica y teoría</h3>
+            <p class="text-slate-300 leading-7">
+              No separamos la ejecución del conocimiento. La teoría siempre se lleva a la práctica
+              para entender mejor lo que se toca.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-xl text-amber-300">
+              3
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-white">Ambiente ideal</h3>
+            <p class="text-slate-300 leading-7">
+              Más allá del instrumento, brindamos un espacio de concentración, creatividad y
+              confianza que invita a aprender sin presión.
+            </p>
+          </article>
+
+          <article class="rounded-3xl border border-slate-800 bg-slate-900/70 p-6">
+            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-xl text-amber-300">
+              4
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-white">Música viva</h3>
+            <p class="text-slate-300 leading-7">
+              Trabajamos repertorio, criterio musical y expresión para que cada alumno avance no
+              solo técnicamente, sino como intérprete auténtico.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="bg-slate-950/70 py-20">
+        <div class="mx-auto max-w-7xl px-6">
+          <div class="mb-12 max-w-2xl">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+              Testimonios
+            </p>
+            <h2 class="font-display text-4xl text-white md:text-5xl">
+              La música conecta, y las experiencias también
+            </h2>
+          </div>
+
+          <div class="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div class="space-y-6">
+              <blockquote class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+                <p class="text-lg leading-8 text-slate-200">
+                  “Las clases son muy amenas, profesionales y personalizadas. Me ayudaron a ganar
+                  confianza y a entender la música de otra manera. ¡Siento que cada clase me lleva
+                  adelante!”
+                </p>
+                <footer class="mt-5 text-sm text-amber-300">— Ana M. / Estudiante de piano</footer>
+              </blockquote>
+
+              <blockquote class="rounded-3xl border border-slate-800 bg-slate-900 p-7">
+                <p class="text-lg leading-8 text-slate-200">
+                  “La academia tiene un trato cálido y muy serio al mismo tiempo. Aprendí técnica,
+                  repertorio y sobre todo disfruté mucho más de tocar.”
+                </p>
+                <footer class="mt-5 text-sm text-amber-300">— Juan P. / Estudiante de guitarra</footer>
+              </blockquote>
+            </div>
+
+            <div class="rounded-3xl border border-slate-800 bg-slate-900 p-6">
+              <div class="mb-4 flex items-center justify-between">
+                <h3 class="text-xl font-semibold text-white">Espacio de estudio</h3>
+                <span class="rounded-full border border-amber-400/40 bg-amber-400/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-amber-200">
+                  Galería
+                </span>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <img
+                  src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=900&q=80"
+                  alt="Clase de música"
+                  class="h-40 w-full rounded-2xl object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=80"
+                  alt="Instrumentos musicales"
+                  class="h-40 w-full rounded-2xl object-cover"
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=900&q=80"
+                  alt="Estudio musical"
+                  class="h-40 w-full rounded-2xl object-cover"
+                />
+                <div class="flex h-40 items-center justify-center rounded-2xl border border-dashed border-slate-700 bg-slate-800/50 text-center text-slate-400">
+                  [Foto del estudio / recital / alumnado]
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="mx-auto max-w-7xl px-6 py-20">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-300">
+              Contacto
+            </p>
+            <h2 class="font-display text-4xl text-white md:text-5xl">
+              Hablemos de tu próxima etapa musical
+            </h2>
+
+            <p class="mt-5 max-w-md text-lg leading-8 text-slate-300">
+              Si querés comenzar a estudiar, seguir avanzando o consultar disponibilidad, escribinos.
+              Estamos para ayudarte a elegir la mejor opción para vos o tu hijo.
+            </p>
+
+            <div class="mt-8 space-y-5">
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Ubicación</p>
+                <p class="mt-2 text-lg text-white">Buenos Aires, Argentina</p>
+              </div>
+
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-400">WhatsApp</p>
+                <p class="mt-2 text-lg text-white">+54 9 11 2345-6789</p>
+              </div>
+
+              <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <p class="text-sm uppercase tracking-[0.2em] text-slate-400">Redes</p>
+                <div class="mt-2 flex gap-4 text-white">
+                  <a href="#" class="hover:text-amber-300">Instagram</a>
+                  <a href="#" class="hover:text-amber-300">Facebook</a>
+                  <a href="#" class="hover:text-amber-300">YouTube</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-7 shadow-soft">
+            <div class="grid gap-5 md:grid-cols-2">
+              <div>
+                <label for="nombre" class="mb-2 block text-sm font-medium text-slate-300">Nombre</label>
+                <input id="nombre" type="text" placeholder="Tu nombre" class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none" />
+              </div>
+
+              <div>
+                <label for="email" class="mb-2 block text-sm font-medium text-slate-300">Email</label>
+                <input id="email" type="email" placeholder="tu@email.com" class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none" />
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="instrumento" class="mb-2 block text-sm font-medium text-slate-300">Instrumento o materia</label>
+                <select id="instrumento" class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white focus:border-amber-400 focus:outline-none">
+                  <option>Guitarra</option>
+                  <option>Violín</option>
+                  <option>Oboe</option>
+                  <option>Piano</option>
+                  <option>Audioperceptiva</option>
+                  <option>Armonía</option>
+                  <option>Quiero consultar disponibilidad</option>
+                </select>
+              </div>
+
+              <div class="md:col-span-2">
+                <label for="mensaje" class="mb-2 block text-sm font-medium text-slate-300">Mensaje</label>
+                <textarea id="mensaje" rows="5" placeholder="Contanos tu nivel, tus objetivos o cualquier duda..." class="w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"></textarea>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-amber-400 px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-amber-300"
+            >
+              Enviar consulta
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-800 bg-slate-950">
+      <div class="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-8 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+        <p>© 2026 Auralis Academia de Música. Todos los derechos reservados.</p>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-white">Instagram</a>
+          <a href="#" class="hover:text-white">Facebook</a>
+          <a href="#" class="hover:text-white">WhatsApp</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
