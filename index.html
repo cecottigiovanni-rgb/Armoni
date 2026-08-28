@@ -80,10 +80,10 @@
           </div>
 
           <a
-            href="#contacto"
+            href="tel:2612153060"
             class="rounded-full border border-amber-400/60 bg-amber-400 px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-amber-300"
           >
-            Inscribirme
+            Inscripciones: 2612153060
           </a>
         </div>
       </nav>
@@ -106,10 +106,10 @@
 
           <div class="mt-8 flex flex-wrap gap-4">
             <a
-              href="#contacto"
+              href="tel:2612153060"
               class="rounded-full bg-amber-400 px-7 py-3.5 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-amber-300"
             >
-              Inscribirme
+              Inscripciones: 2612153060
             </a>
             <a
               href="#clases"
@@ -121,7 +121,7 @@
 
           <div class="mt-10 flex flex-wrap gap-8 text-sm text-slate-300">
             <div>
-              <p class="text-2xl font-bold text-white">6</p>
+              <p class="text-2xl font-bold text-white">3</p>
               <span>disciplinas</span>
             </div>
             <div>
@@ -242,12 +242,23 @@
 
             <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
               <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
-                🎼
+                🎸
               </div>
-              <h3 class="mb-3 text-2xl font-semibold text-white">Oboe</h3>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Guitarra</h3>
               <p class="text-slate-300 leading-7">
-                Aprendé respiración, articulación, embocadura y fraseo con un enfoque técnico y
-                expresivo pensado para tu desarrollo.
+                Trabajamos postura, digitación, ritmos, armonía y repertorio para que puedas tocar
+                con soltura y expresividad.
+              </p>
+            </article>
+
+            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
+              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
+                🎻
+              </div>
+              <h3 class="mb-3 text-2xl font-semibold text-white">Violín</h3>
+              <p class="text-slate-300 leading-7">
+                Fortalecemos afinación, arco, técnica corporal y musicalidad con una progresión clara
+                y acompañamiento constante.
               </p>
             </article>
 
@@ -259,28 +270,6 @@
               <p class="text-slate-300 leading-7">
                 Combina lectura, coordinación, digitación y expresión musical para aprender a
                 interpretar con libertad y seguridad.
-              </p>
-            </article>
-
-            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
-                👂
-              </div>
-              <h3 class="mb-3 text-2xl font-semibold text-white">Audioperceptiva</h3>
-              <p class="text-slate-300 leading-7">
-                Entrená tu oído para reconocer intervalos, ritmo, altura y estructura musical,
-                fortaleciendo tu lectura y comprensión del repertorio.
-              </p>
-            </article>
-
-            <article class="rounded-3xl border border-slate-800 bg-slate-900 p-6 transition hover:-translate-y-1 hover:border-amber-400/50">
-              <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-amber-400/15 text-amber-300">
-                📝
-              </div>
-              <h3 class="mb-3 text-2xl font-semibold text-white">Armonía</h3>
-              <p class="text-slate-300 leading-7">
-                Comprendé la lógica detrás de la música: acordes, funciones, relación tonal y análisis
-                musical aplicado a la práctica.
               </p>
             </article>
           </div>
@@ -445,7 +434,7 @@
             </div>
           </div>
 
-          <form class="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-7 shadow-soft">
+          <form id="contact-form" class="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-7 shadow-soft">
             <div class="grid gap-5 md:grid-cols-2">
               <div>
                 <label for="nombre" class="mb-2 block text-sm font-medium text-slate-300">Nombre</label>
@@ -478,13 +467,34 @@
 
             <button
               type="submit"
+              id="send-gmail"
               class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-amber-400 px-6 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-amber-300"
             >
-              Enviar consulta
+              Enviar por Gmail
             </button>
           </form>
         </div>
       </section>
+    
+    <script>
+      (function(){
+        const form = document.getElementById('contact-form');
+        if(!form) return;
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const nombre = document.getElementById('nombre')?.value || '';
+          const email = document.getElementById('email')?.value || '';
+          const instrumento = document.getElementById('instrumento')?.value || '';
+          const mensaje = document.getElementById('mensaje')?.value || '';
+          const to = 'cecottigiovanni@gmail.co';
+          const subject = `Consulta - ${instrumento} - ${nombre}`;
+          const body = `Nombre: ${nombre}\nEmail: ${email}\nInstrumento: ${instrumento}\n\nMensaje:\n${mensaje}`;
+          const url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+          window.open(url, '_blank');
+          return false;
+        });
+      })();
+    </script>
     </main>
 
     <footer class="border-t border-slate-800 bg-slate-950">
