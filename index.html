@@ -8,6 +8,8 @@
       name="description"
       content="Auralis Academia de Música ofrece clases personalizadas de guitarra, violín y piano para todas las edades y niveles."
     />
+    <!-- Pegar aquí el ID de Formspree (ej: /f/mnqlpraj) -->
+    <meta name="formspree-id" content="REPLACE_WITH_FORMSPREE_ID" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -437,17 +439,64 @@
       (function(){
         const form = document.getElementById('contact-form');
         if(!form) return;
-        form.addEventListener('submit', function(e){
+
+        const formspreeId = document.querySelector('meta[name="formspree-id"]')?.content || '';
+        const usingFormspree = formspreeId && formspreeId !== 'REPLACE_WITH_FORMSPREE_ID';
+
+        function showMessage(type, text){
+          let el = document.getElementById('form-message');
+          if(!el){
+            el = document.createElement('div');
+            el.id = 'form-message';
+            el.className = 'mt-4 rounded-lg px-4 py-3 text-sm';
+            form.appendChild(el);
+          }
+          el.textContent = text;
+          el.style.background = type === 'ok' ? '#063f14' : '#4a0f0f';
+          el.style.color = '#fff';
+        }
+
+        form.addEventListener('submit', async function(e){
           e.preventDefault();
           const nombre = document.getElementById('nombre')?.value || '';
           const email = document.getElementById('email')?.value || '';
           const instrumento = document.getElementById('instrumento')?.value || '';
           const mensaje = document.getElementById('mensaje')?.value || '';
-          const to = 'cecottigiovanni@gmail.co';
-          const subject = `Consulta - ${instrumento} - ${nombre}`;
-          const body = `Nombre: ${nombre}\nEmail: ${email}\nInstrumento: ${instrumento}\n\nMensaje:\n${mensaje}`;
-          const url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-          window.open(url, '_blank');
+
+          if(usingFormspree){
+            // send via Formspree
+            try{
+              const endpoint = formspreeId.startsWith('/') ? ('https://formspree.io' + formspreeId) : ('https://formspree.io/f/' + formspreeId);
+              const data = new FormData();
+              data.append('nombre', nombre);
+              data.append('email', email);
+              data.append('instrumento', instrumento);
+              data.append('mensaje', mensaje);
+
+              const res = await fetch(endpoint, {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+              });
+              const json = await res.json();
+              if(res.ok){
+                showMessage('ok', 'Gracias — tu consulta fue enviada. Te respondemos por email o WhatsApp pronto.');
+                form.reset();
+              } else {
+                showMessage('err', json?.error || 'Ocurrió un error al enviar. Por favor intentá de nuevo.');
+              }
+            }catch(err){
+              showMessage('err', 'Error de red. Intentá nuevamente más tarde.');
+              console.error(err);
+            }
+          } else {
+            // fallback: open Gmail composition (existing behavior)
+            const to = 'cecottigiovanni@gmail.co';
+            const subject = `Consulta - ${instrumento} - ${nombre}`;
+            const body = `Nombre: ${nombre}\nEmail: ${email}\nInstrumento: ${instrumento}\n\nMensaje:\n${mensaje}`;
+            const url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) + '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.open(url, '_blank');
+          }
           return false;
         });
       })();
